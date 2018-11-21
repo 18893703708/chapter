@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.huyun.sys.dao.RoleMapper">
+	<resultMap id="BaseResultMap" type="com.huyun.sys.model.Role">
+		<id column="role_id" jdbcType="VARCHAR" property="roleId" />
+		<result column="role_name" jdbcType="VARCHAR" property="roleName" />
+		<result column="type" jdbcType="VARCHAR" property="type" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	</resultMap>
+
+	<select id="selectByUserId" resultMap="BaseResultMap">
+		select a.*
+		from sys_role a,sys_user_role b
+		where a.role_id=b.role_id and b.user_id= #{userId}
+	</select>
+	<select id="selectBylikename" resultMap="BaseResultMap" parameterType="com.huyun.sys.model.Role">
+		  SELECT  * from sys_role
+		  <where>
+			  <if test="null != roleName and '' != roleName">
+				  role_name LIKE concat('%',#{roleName}, '%')
+			  </if>
+		  </where>
+		order by create_time desc
+	</select>
+	<delete id="deleteRole" parameterType="java.lang.Integer">
+			delete from sys_role where role_id=#{roleId,jdbcType=INTEGER}
+	</delete>
+</mapper>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:include="include::header">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link th:href="@{${basePath}+'/hplus/css/bootstrap.min.css?v=3.3.6'}" rel="stylesheet">
+    <link th:href="@{${basePath}+'/hplus/css/font-awesome.min.css?v=4.4.0'}" rel="stylesheet">
+    <link th:href="@{${basePath}+'/hplus/css/font-awesome.css?v=4.4.0'}" rel="stylesheet">
+    <!-- Morris -->
+    <link th:href="@{${basePath}+'/hplus/css/plugins/morris/morris-0.4.3.min.css'}" rel="stylesheet">
+    <!-- Gritter -->
+    <link th:href="@{${basePath}+'/hplus/js/plugins/gritter/jquery.gritter.css'}" rel="stylesheet">
+    <link th:href="@{${basePath}+'/hplus/css/animate.css'}" rel="stylesheet">
+    <link th:href="@{${basePath}+'/hplus/css/style.css?v=4.1.0'}" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+
+    </div>
+</div>
+
+
+
+
+<script>
+
+
+</script>
+<style>
+    .contains {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .col-md-2 {
+        width: 25%;
+    }
+</style>
+
+
+<div class="contains">
+
+
+    <div class="row">
+        <a th:href="@{${basePath}+'/users/users/Slist'}">
+            <div class="col-md-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">会员</span>
+                        <h5>会员总数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 th:text="${memberTotal}" class="no-margins">0</h1>
+                        <div class="stat-percent font-bold text-info"><i class="fa fa-level-up"></i>
+                        </div>
+                        <small>总计</small>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+
+        <a th:href="@{${basePath}+'/rechage/rechage/Slist'}">
+            <div class="col-md-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">充值</span>
+                        <h5>充值订单数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 th:text="${rechageTotal}" class="no-margins">0</h1>
+                        <div class="stat-percent font-bold text-info"><i class="fa fa-level-up"></i>
+                        </div>
+                        <small>总计</small>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a th:href="@{${basePath}+'/card/card/SlogList'}">
+            <div class="col-md-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">刷卡</span>
+                        <h5>刷卡记录数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 th:text="${useCardLogTotal}" class="no-margins">0</h1>
+                        <div class="stat-percent font-bold text-info"><i class="fa fa-level-up"></i>
+                        </div>
+                        <small>总计</small>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+</body>
+
+</html>

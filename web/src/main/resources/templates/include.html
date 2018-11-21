@@ -1,0 +1,70 @@
+<head th:fragment="header">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"></meta>
+
+        <link th:href="@{${basePath}+'/plugin/hplus/css/bootstrap.min.css?v=3.3.6'}" rel="stylesheet">
+        <link th:href="@{${basePath}+'/plugin/hplus/css/font-awesome.min.css?v=4.4.0'}" rel="stylesheet">
+        <link th:href="@{${basePath}+'/plugin/hplus/css/animate.css'}" rel="stylesheet">
+        <link th:href="@{${basePath}+'/plugin/hplus/css/style.css?v=4.1.0'}" rel="stylesheet">
+        <link th:href="@{${basePath}+'/plugin/hplus/css/plugins/iCheck/custom.css'}" rel="stylesheet">
+
+        <style type="text/css">
+            .long-tr th{
+                text-align: center
+            }
+            .long-td td{
+                text-align: center
+            }
+            /* TAB */
+            .nav-tabs.nav>li>a {
+                padding: 10px 25px;
+                margin-right: 0;
+            }
+            .nav-tabs.nav>li>a:hover,
+            .nav-tabs.nav>li.active>a {
+                border-top: 3px solid #1ab394;
+                padding-top: 8px;
+            }
+            .nav-tabs>li>a {
+                color: #A7B1C2;
+                font-weight: 500;
+                margin-right: 2px;
+                line-height: 1.42857143;
+                border: 1px solid transparent;
+                border-radius: 0;
+            }
+            .control-label{margin-top: 7px;text-align: right;}
+        </style>
+</head>
+
+<div th:fragment="footer">
+    <script th:src="@{${basePath}+'/plugin/hplus/js/jquery.min.js?v=2.1.4'}"></script>
+    <script th:src="@{${basePath}+'/plugin/hplus/js/bootstrap.min.js?v=3.3.6'}"></script>
+    <script th:src="@{${basePath}+'/plugin/hplus/js/plugins/iCheck/icheck.min.js'}"></script>
+    <script th:src="@{${basePath}+'/plugin/hplus/js/content.js?v=1.0.0'}"></script>
+    <script th:src="@{${basePath}+'/plugin/layer/layer.js'}"></script>
+    <script th:src="@{${basePath}+'/plugin/laypage-v1.3/laypage/laypage.js'}"></script>
+    <!-- jQuery Validation plugin javascript-->
+    <script th:src="@{${basePath}+'/plugin/hplus/js/plugins/validate/jquery.validate.min.js'}"></script>
+    <script th:src="@{${basePath}+'/plugin/hplus/js/plugins/validate/messages_zh.min.js'}"></script>
+    <script th:src="@{${basePath}+'/js/jquery.form.js'}"></script>
+    <script th:src="@{${basePath}+'/js/vue.min.js'}"></script>
+    <script th:src="@{${basePath}+'/js/common.js'}"></script>
+</div>
+
+
+<div th:fragment="sys_nav">
+
+
+    <ul class="nav nav-tabs">
+        <li th:class="${active=='upload'}? 'active' : ''"   ><a th:href="@{${basePath}+'/sys/config/upload'}">上传配置</a></li>
+        <li th:class="${active=='set'}? 'active' : ''"><a th:href="@{${basePath}+'/sys/config/set'}">平台设置</a></li>
+        <li th:class="${active=='push'}? 'active' : ''"><a th:href="@{${basePath}+'/sys/config/push'}">推送设置</a></li>
+        <li th:class="${active=='sms'}? 'active' : ''"><a th:href="@{${basePath}+'/sys/config/sms'}">短信配置</a></li>
+        <li th:class="${active=='smsList'}? 'active' : ''"><a th:href="@{${basePath}+'/sys/sms/list'}">短信模板</a></li>
+    </ul>
+
+
+</div>
