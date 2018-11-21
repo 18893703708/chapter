@@ -10,6 +10,8 @@ import org.springframework.cache.annotation.EnableCaching;
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})//屏蔽自带数据源自动加载
 @SpringBootApplication(scanBasePackages="com.huyun")
 public class WebApplication {
+
+    //adsjflkdjfasdjfaldfj
     public static void main(String[] args) {
         SpringApplication.run(WebApplication.class, args);
     }
