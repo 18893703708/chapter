@@ -1,6 +1,7 @@
 package com.huyun.web.modules.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,6 +22,9 @@ public class testMulti {
 //
 //
 //        });
+
+        int a =1;
+        int b = 2;
         return null;
 
     }
